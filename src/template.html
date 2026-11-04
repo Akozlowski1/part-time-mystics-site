@@ -1,0 +1,215 @@
+<title>Part Time Mystics</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Part Time Mystics, a duo from Portland, Oregon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Restraint after Isakov: flat warm ground, one serif, plain nouns, no slogans. The collage stays, quieter. */
+:root{
+  --paper:#f1e5c7;
+  --ink:#2a1f17;
+  --ink-soft:#5f4b38;
+  --sepia:#8a6a47;
+  --link:#7a2e2a;
+  --print:#f7eed8;
+  --f-display:'IM Fell English','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --f-body:'EB Garamond','Iowan Old Style',Georgia,serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:20px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 48px;
+}
+body::after{ /* faint paper grain */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.10;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .26  0 0 0 0 .16  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto}
+img{max-width:100%;display:block}
+
+/* ---- masthead ---- */
+.mast{padding-top:40px}
+.wordmark{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,8vw,76px);line-height:1;margin:0;text-wrap:balance}
+.menu{display:flex;flex-wrap:wrap;gap:4px 22px;margin:18px 0 0;padding:0;list-style:none;font-size:20px}
+
+/* ---- collage ---- */
+.stage{position:relative;width:100%;aspect-ratio:1060/640;margin:34px 0 0}
+.print{position:absolute;display:block;background:var(--print);padding:8px 8px 30px;text-decoration:none;color:var(--ink);
+  box-shadow:0 6px 16px -8px rgba(60,38,20,.45),0 1px 3px rgba(60,38,20,.2);transition:transform .3s ease}
+.print img{width:100%;height:auto}
+.print .tag{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-style:italic;font-size:16px;color:var(--ink-soft)}
+.print:hover,.print:focus-visible{transform:translateY(-4px) rotate(0deg)!important;z-index:9}
+.p-dancer{left:30%;top:2%;width:39%;transform:rotate(-.5deg);z-index:3}
+.p-cabin{left:0;top:16%;width:29%;transform:rotate(-1.5deg);z-index:4}
+.p-hand{left:57%;top:36%;width:28%;transform:rotate(1.2deg);z-index:6}
+.p-stacks{left:72%;top:68%;width:26%;transform:rotate(-1.2deg);z-index:5}
+.p-poster{left:70%;top:1%;width:28%;transform:rotate(1.5deg);z-index:3}
+.p-matches{left:6%;top:61%;width:27%;transform:rotate(-1.5deg);z-index:5}
+.p-type{left:37%;top:64%;width:28%;transform:rotate(.8deg);z-index:5}
+.geese{position:absolute;pointer-events:none;z-index:7;opacity:.85;left:60%;top:-9%;width:15%}
+
+/* ---- sections ---- */
+section{padding:64px 0 0;scroll-margin-top:12px}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,4vw,36px);margin:0 0 14px;line-height:1.1}
+p{margin:0 0 14px}
+.cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:34px;align-items:start}
+.bio{max-width:58ch;text-wrap:pretty}
+.frame{margin:0;background:var(--print);padding:8px;box-shadow:0 6px 16px -8px rgba(60,38,20,.45),0 1px 3px rgba(60,38,20,.2)}
+.frame img{width:100%;height:auto}
+.video{position:relative;display:block;text-decoration:none;color:var(--print);background:#2a1f17}
+.video img{width:100%;height:auto;opacity:.85}
+.video .play{position:absolute;inset:0;display:grid;place-items:center}
+.video .play span{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--print);display:grid;place-items:center;font-size:24px;padding-left:4px;background:rgba(42,31,23,.4)}
+.shows{list-style:none;margin:0;padding:0;max-width:700px}
+.shows li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 24px;padding:10px 0;border-bottom:1px solid rgba(90,70,52,.25)}
+.shows .d{color:var(--ink-soft)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:20px}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:200px;object-fit:cover}
+form{display:grid;gap:14px;max-width:520px}
+label{color:var(--ink-soft);font-size:17px;display:grid;gap:4px}
+input,textarea{font:inherit;font-size:19px;color:var(--ink);background:rgba(250,243,224,.7);border:1px solid rgba(90,70,52,.5);padding:9px 11px;border-radius:0;width:100%}
+textarea{min-height:130px;resize:vertical}
+button{font:inherit;font-size:19px;color:var(--link);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;justify-self:start}
+button:hover{color:var(--ink)}
+.thanks{font-style:italic;color:var(--ink-soft);margin:0;min-height:1.4em}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+footer{margin-top:72px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:17px;color:var(--ink-soft)}
+.pv{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;margin:0 -16px;padding:6px 16px;background:var(--ink);color:var(--print);font-size:14px;text-align:center}
+
+/* ---- phone and narrow ---- */
+@media (max-width:860px){
+  .stage{aspect-ratio:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+  .print{position:relative;left:auto!important;top:auto!important;width:auto!important;transform:none!important}
+  .p-duo{grid-column:1 / -1;order:-1}
+  .p-poster{order:5}
+  .p-stacks{order:6}
+  .geese{display:none}
+  .cols,.two{grid-template-columns:minmax(0,1fr);gap:26px}
+  .shows li{grid-template-columns:minmax(0,1fr)}
+  body{font-size:19px}
+}
+</style>
+
+{{PREVIEWBAR}}
+<div class="wrap">
+  <header class="mast">
+    <h1 class="wordmark">Part Time Mystics</h1>
+    <nav aria-label="Sections">
+      <ul class="menu">
+        <li><a href="#about">about</a></li>
+        <li><a href="#music">music</a></li>
+        <li><a href="#shows">shows</a></li>
+        <li><a href="#photos">photos</a></li>
+        <li><a href="#contact">contact</a></li>
+        <li><a href="#list">mailing list</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="stage" role="group" aria-label="Collage of prints. Each one links to a section of this page.">
+    <img class="geese" src="{{img:geese.png}}" alt="" width="325" height="254">
+    <a class="print p-dancer" href="#music"><img src="{{img:dancer.jpg}}" alt="A dancer in silhouette against smoke and sparks" width="1000" height="563"><span class="tag">music</span></a>
+    <a class="print p-cabin" href="#about"><img src="{{img:craig.jpg}}" alt="Craig Carney in profile against darkness, a guitar in the foreground" width="1000" height="667"><span class="tag">about</span></a>
+    <a class="print p-hand" href="#photos"><img src="{{img:andrzej.jpg}}" alt="Andrzej Kozlowski singing and playing guitar" width="1000" height="666"><span class="tag">photos</span></a>
+    <a class="print p-stacks" href="#photos"><img src="{{img:coast.jpg}}" alt="Fog and surf around sea stacks on the Oregon coast" width="1000" height="678"><span class="tag">sea stacks</span></a>
+    <a class="print p-poster" href="#photos"><img src="{{img:fog.jpg}}" alt="Fog and surf on a beach on the Oregon coast" width="1000" height="667"><span class="tag">the Oregon coast</span></a>
+    <a class="print p-matches" href="#list"><img src="{{img:matches.jpg}}" alt="A vintage matchbox with an engraved mouse on the lid" width="940" height="640"><span class="tag">mailing list</span></a>
+    <a class="print p-type" href="#contact"><img src="{{img:typewriter.jpg}}" alt="Keys of an old Underwood typewriter" width="900" height="471"><span class="tag">contact</span></a>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="cols">
+      <div class="bio">
+        <p>Part Time Mystics is a duo from Portland, Oregon.</p>
+        <p>Andrzej Kozlowski: guitar, vocals.<br>Craig Carney: cajon, percussion, vocals.</p>
+        <p>The songs are about nature, place, and belonging.</p>
+      </div>
+      <figure class="frame">
+        <img src="{{img:doubleexp.jpg}}" alt="Double exposure of the duo in the cabin over a stand of trees" width="1000" height="563" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="music">
+    <h2>Music</h2>
+    <div class="cols">
+      <a class="video" id="lead-video" data-yt="KHUsseG4VU0" href="https://www.youtube.com/watch?v=KHUsseG4VU0" target="_blank" rel="noopener" aria-label="Play Outlaw, on YouTube">
+        <img src="{{img:hand.jpg}}" alt="" width="1000" height="557" loading="lazy">
+        <span class="play" aria-hidden="true"><span>&#9654;</span></span>
+      </a>
+      <p><em>Outlaw</em><br><a href="https://www.youtube.com/@part.time.mystics" target="_blank" rel="noopener">youtube</a><br><a href="https://www.instagram.com/part.time.mystics/" target="_blank" rel="noopener">instagram</a></p>
+    </div>
+  </section>
+
+  <section id="shows">
+    <h2>Shows</h2>
+    <ul class="shows">
+      <li><span class="d">Aug 19, 2026</span><span>Northwest Portland International Hostel, Portland</span></li>
+      <li><span class="d">May 1, 2026</span><span>Rose City Book Pub, Portland</span></li>
+      <li><span class="d">Apr 7, 2026</span><span>Northwest Portland International Hostel, Portland</span></li>
+    </ul>
+  </section>
+
+  <section id="photos">
+    <h2>Photos</h2>
+    <div class="gallery">
+      <figure><img src="{{img:cabin.jpg}}" alt="The duo playing by candlelight and string lights in a wood-panelled cabin" width="1000" height="576" loading="lazy"></figure>
+      <figure><img src="{{img:doubleexp.jpg}}" alt="Double exposure of the duo in the cabin over a stand of trees" width="1000" height="563" loading="lazy"></figure>
+      <figure><img src="{{img:hand.jpg}}" alt="A hand on pine bark, overlaid with a figure bent over a guitar" width="1000" height="557" loading="lazy"></figure>
+      <figure><img src="{{img:forest.jpg}}" alt="A flooded path through misty trees" width="1000" height="556" loading="lazy"></figure>
+      <figure><img src="{{img:dancer.jpg}}" alt="A dancer in silhouette against smoke and sparks" width="1000" height="563" loading="lazy"></figure>
+      <figure><img src="{{img:craig.jpg}}" alt="Craig Carney in profile against darkness, a guitar in the foreground" width="1000" height="667" loading="lazy"></figure>
+      <figure><img src="{{img:fog.jpg}}" alt="Fog and surf on a beach on the Oregon coast" width="1000" height="667" loading="lazy"></figure>
+      <figure><img src="{{img:hostel.jpg}}" alt="Andrzej Kozlowski on guitar and vocals and Craig Carney on cajon at the Northwest Portland International Hostel" width="1000" height="508" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Booking and other notes: <a href="mailto:booking@parttimemystics.com">booking@parttimemystics.com</a>, or use the form.</p>
+    <form id="contact-form" action="https://formspree.io/f/mnppbzrw" method="post">
+      <input type="hidden" name="_subject" value="Part Time Mystics website message">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <label for="cf-name">name<input id="cf-name" name="name" autocomplete="name" required></label>
+      <label for="cf-email">email<input id="cf-email" name="email" type="email" autocomplete="email" required></label>
+      <label for="cf-msg">message<textarea id="cf-msg" name="message" required></textarea></label>
+      <button type="submit">send</button>
+      <p class="thanks" id="cf-status" role="status"></p>
+    </form>
+  </section>
+
+  <section id="list">
+    <h2>Mailing list</h2>
+    <form id="list-form" novalidate>
+      <label for="ml-email">email<input id="ml-email" name="email" type="email" autocomplete="email"></label>
+      <button type="submit">join</button>
+      <p class="thanks" id="ml-status" role="status"></p>
+    </form>
+  </section>
+
+  <footer>
+    <a href="https://www.youtube.com/@part.time.mystics" target="_blank" rel="noopener">youtube</a>
+    <a href="https://www.instagram.com/part.time.mystics/" target="_blank" rel="noopener">instagram</a>
+  </footer>
+</div>
+<script>
+(function(){
+  function wire(formId,statusId,msg){
+    var f=document.getElementById(formId),s=document.getElementById(statusId);
+    if(!f||!s)return;
+    f.addEventListener('submit',function(e){e.preventDefault();s.textContent=msg;});
+  }
+  {{CONTACTWIRE}}
+  wire('list-form','ml-status','{{LISTMSG}}');
+})();
+{{EMBEDJS}}
+</script>
